@@ -1,0 +1,8 @@
+commands:
+  check: |
+    /opt/resource/wrapped/pool/check
+  in: |
+    if [ "${SMUGGLER_noop:-}" != "true" ]; then
+      /opt/resource/wrapped/pool/in ${SMUGGLER_DESTINATION_DIR}
+    fi
+  out: /opt/resource/wrapped/pool/out ${SMUGGLER_SOURCES_DIR}
